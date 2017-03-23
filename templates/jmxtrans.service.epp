@@ -5,10 +5,8 @@ After=syslog.target network.target
 [Service]
 Type=forking
 User=<%= $user %>
-# Run ExecStartPre with root-permissions
-PermissionsStartOnly=true
+WorkingDirectory=/usr/share/jmxtrans
 RuntimeDirectory=jmxtrans
-PIDFile=/var/run/jmxtrans/jmxtrans.pid
 ExecStart=/usr/share/jmxtrans/bin/jmxtrans.sh start
 
 [Install]
