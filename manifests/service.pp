@@ -11,6 +11,7 @@ class jmxtrans::service {
       ensure     => running,
       hasstatus  => true,
       hasrestart => true,
+      enable     => true,
     }
   }
 }
