@@ -100,7 +100,7 @@ define jmxtrans::query (
           'booleanAsNumber'     => $graphite['boolean_as_number'],
         }
         $graphite_writer = [jmxtrans::merge_notundef({
-          '@class' => 'com.googlecode.jmxtrans.model.output.GraphiteWriter',
+          '@class' => 'com.googlecode.jmxtrans.model.output.GraphiteWriterFactory',
           'host'   => $graphite['host'],
           'port'   => $graphite['port'],
         }, $graphite_extras)]
