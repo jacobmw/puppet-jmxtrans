@@ -55,7 +55,7 @@ define jmxtrans::query (
 
   String[1] $host = $title,
   Optional[Integer[1]] $port = undef,
-
+  Optional[String[1]] $writerclass = 'com.googlecode.jmxtrans.model.output.GraphiteWriter',
   Optional[String[1]] $username = undef,
   Optional[String[1]] $password = undef,
 
@@ -101,7 +101,7 @@ define jmxtrans::query (
           'booleanAsNumber'     => $graphite['boolean_as_number'],
         }
         $graphite_writer = [jmxtrans::merge_notundef({
-          '@class' => 'com.googlecode.jmxtrans.model.output.GraphiteWriter',
+          '@class' => $graphite['writerclass'],
           'host'   => $graphite['host'],
           'port'   => $graphite['port'],
         }, $graphite_extras)]
