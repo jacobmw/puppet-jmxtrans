@@ -54,8 +54,8 @@ define jmxtrans::query (
   Enum['present', 'absent'] $ensure = 'present',
 
   String[1] $host = $title,
+  String[1] $writerclass = 'com.googlecode.jmxtrans.model.output.GraphiteWriter',
   Optional[Integer[1]] $port = undef,
-  Optional[String[1]] $writerclass = 'com.googlecode.jmxtrans.model.output.GraphiteWriter',
   Optional[String[1]] $username = undef,
   Optional[String[1]] $password = undef,
 
@@ -67,6 +67,7 @@ define jmxtrans::query (
     host => String[1],
     port => Integer[1],
     Optional[root] => String[1],
+    Optional[writterclass] => String[1],
     Optional[boolean_as_number] => Boolean,
   }]] $graphite = undef,
 
